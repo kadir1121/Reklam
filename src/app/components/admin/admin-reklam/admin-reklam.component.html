@@ -1,0 +1,68 @@
+<div class="container">
+  <h2>RekalmAjansiler</h2>
+  <button mat-fab color="primary" matTooltip="RekalmAjansi Ekle" (click)="Ekle()">
+    <mat-icon aria-label="label">add</mat-icon>
+  </button>
+  <p>&nbsp;</p>
+
+  <mat-form-field appearance="outline" style="width: 50%;">
+    <mat-label>reklam Seçiniz</mat-label>
+    
+  </mat-form-field>
+
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+    <ng-container matColumnDef="reklamajansi">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> reklamajansi
+      </mat-header-cell>
+      <mat-cell *matCellDef="let kayit"> {{kayit.reklamajansi}} </mat-cell>
+    </ng-container>   
+    <ng-container matColumnDef="reklamsehir">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> reklamsehir
+      </mat-header-cell>
+      <mat-cell *matCellDef="let kayit"> {{kayit.reklamsehir}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="reklamTel">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> reklamTel
+      </mat-header-cell>
+      <mat-cell *matCellDef="let kayit"> {{kayit.reklamTel}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="reklamEposta">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> reklamEposta
+      </mat-header-cell>
+      <mat-cell *matCellDef="let kayit"> {{kayit.reklameposta}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="reklamsahibi">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> reklamsahibi
+      </mat-header-cell>
+      <mat-cell *matCellDef="let kayit"> {{kayit.reklamsahibi}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="reklamAdres">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> reklamAdres
+      </mat-header-cell>
+      <mat-cell *matCellDef="let kayit"> {{kayit.reklamadres}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="detay">
+      <mat-header-cell *matHeaderCellDef> İşlemler
+      </mat-header-cell>
+      <mat-cell *matCellDef="let kayit">
+
+        <button mat-icon-button color="primary" matTooltip="RekalmAjansi Önizle" (click)="Detay(kayit)">
+          <mat-icon aria-label="label">search</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" matTooltip="RekalmAjansi Düzenle" (click)="Duzenle(kayit)">
+          <mat-icon aria-label="label">edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" matTooltip="RekalmAjansi Sil" (click)="Sil(kayit)">
+          <mat-icon aria-label="label">delete</mat-icon>
+        </button>
+
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[ 10, 25, 100]" showFirstLastButtons>
+  </mat-paginator>
+</div>

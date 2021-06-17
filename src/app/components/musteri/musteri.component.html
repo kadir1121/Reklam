@@ -1,0 +1,14 @@
+<div class="container">
+  <h1 *ngIf="kat">{{kat.musteriAdi}} musteri</h1>
+  <h3 style="color:red" *ngIf="musteriler?.length==0">Bu Müşteri Bir Reklam Ajansıyla Çalışmadı</h3>
+  <div *ngFor="let reklamajansi of musteriler">
+    <h2>{{reklamajansi.reklamajansi}}</h2>
+    <p>
+      <b>Musteri ADi :</b> {{makale.musteriAdi}} &nbsp;&nbsp;
+      <b>Reklam Ajansı :</b> <a href="#" [routerLink]="['/reklamajansi',reklamajansi.reklamID]">{{reklamajansi.musteriAdi}}</a> &nbsp;&nbsp;
+      
+    </p>
+    <hr>
+  </div>
+
+</div>

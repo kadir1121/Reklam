@@ -1,0 +1,14 @@
+<div class="container">
+
+    <div *ngFor="let reklamajansi of reklamajansiler">
+        <h1>{{reklamajansi.Baslik}}</h1>
+        <p>
+            <b>ReklamAjansı :</b> <a href="#" [routerLink]="['/reklamajansi',reklamajansi.musteriId]">{{reklamajansi.reklamajansi}}</a>
+            &nbsp;&nbsp;
+            <b>Sahibi :</b> <a href="#" [routerLink]="['/reklamajansi',reklamajansi.UyeId]">{{reklamajansi.reklamssahibi}}</a> &nbsp;&nbsp;
+           
+        </p>
+        <hr>
+    </div>
+
+</div>
